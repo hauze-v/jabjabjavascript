@@ -71,4 +71,14 @@ if (num > 0 || num % 2 === 0) {
 
 
 ## For loops ##
+for (statement 1; statement 2; statement 3) {
+  code block to be executed
+}
 
+for (starting point; condition; increment/decrement) {
+  code to be executed
+}
+
+for (var i=0; i < 10; i++) {
+  console.log("hello")
+}
