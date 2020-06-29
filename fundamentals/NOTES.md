@@ -54,3 +54,21 @@ if (grade > 90) {
 } else {
   console.log("fail")
 }
+
+## Comparison and Logical Operators ##
+Comparison operators are things like (>, <, >=, <=, ==, ===)
+
+Logical operators combine conditions:
+
+var num=3;
+if (num > 0 && num % 2 === 0) {
+  console.log("positive even")
+}
+
+if (num > 0 || num % 2 === 0) {
+  console.log("positive or even)
+}
+
+
+## For loops ##
+
