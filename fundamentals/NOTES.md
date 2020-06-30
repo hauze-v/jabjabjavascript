@@ -82,3 +82,50 @@ for (starting point; condition; increment/decrement) {
 for (var i=0; i < 10; i++) {
   console.log("hello")
 }
+
+
+## While loop ##
+Start with a starting number of initializer, followed by a condition for when the loop should end, and then an increment or decrement.
+
+It's essentially a broken down for loop.
+
+var i = 0;
+
+while (i < 10) {
+  console.log("hello " + i)
+  i++;
+}
+
+If you know how many times you need to run the loop, use a for loop.
+
+When it's a little more abstract (while it's raining outside), use a while loop.
+
+## Functions ##
+This is how you write a funtion and pass in a parameter
+
+function greet(name) {
+  console.log("hi")
+  console.log("how are you?")
+  console.log("I'm" + name + " Nice to meet you.")
+}
+
+To run, invoke, or call the function:
+
+greet(Adam);
+
+Example problem:
+
+function signChecker(randomNum) {
+  if (randomNum > 0) {
+    console.log("Positive.")
+  } else if (num < 0) {
+    console.log("Negative")
+  } else {
+    console.log("Zero")
+  }
+}
+
+signChecker(88)
+
+## Scope - Global, Local, and Block ##
+
