@@ -128,4 +128,38 @@ function signChecker(randomNum) {
 signChecker(88)
 
 ## Scope - Global, Local, and Block ##
+Global scope:
 
+// This is a global variable which can be accessed from anywhere
+var fullName = "Joe Hardy";
+console.log(fullName);
+
+// Locally scoped variable
+function whatever() {
+  var age = 58;
+}
+console.log(age);
+
+// This will result in a referenceError: age is not defined
+// You're trying to access age in a global scope when it's a locally scoped variable
+
+// When a variable is inside a function, it's a locally scoped variable
+
+Block scoped didn't used to exist before es6 and let or const.
+
+Let and const allow you to create blocked scoped variables
+
+Remember a block is anything between two curly braces
+{
+
+}
+
+When should you use const / let?
+const things = "hi";
+let newName = "joe Biden"
+
+When you use const and let instead of var, you're preventing errors... so which one should you use, const or let?
+
+const = constant, which means you can't reassign a value to that variable
+
+So use const whenever you can, and if you can't, then use let. (You'll mostly be using let).
