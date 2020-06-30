@@ -163,3 +163,45 @@ When you use const and let instead of var, you're preventing errors... so which 
 const = constant, which means you can't reassign a value to that variable
 
 So use const whenever you can, and if you can't, then use let. (You'll mostly be using let).
+
+## Objects ##
+Objects take key value pairs, just like a dictionary
+
+Note that you can make one of the values a function. That function can have a name, like normal, but it can also be an anyonymous function.
+
+Writing the quotes on the key part is optional, but know that they're strings.
+
+const person = {
+  "eyes": 2,
+  "legs": 2,
+  "language": "English",
+  "speak": function() {
+    return "hiya!";
+  }
+}
+
+const person = {
+  eyes: 2,
+  legs: 2,
+  language: "English",
+  speak: function() {
+    return "hiya!";
+  }
+}
+
+Now, when we have to refer back to this person, we simply do:
+
+person.eyes; // This is called dot notation and it's how you access the objects values
+person.legs;
+person.language;
+person.speak();
+
+A function inside an object is no longer called a function, but rather is called a method.
+
+You can also access them like this:
+person["eyes"]
+person["legs"]
+person["language"]
+
+## Arrays ##
+
