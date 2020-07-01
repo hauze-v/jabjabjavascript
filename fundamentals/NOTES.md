@@ -204,4 +204,19 @@ person["legs"]
 person["language"]
 
 ## Arrays ##
+Arrays store multiple values, in a list.
+
+ARRAY IS A TYPE OF OBJECT, it is NOT a primitive data type.
+
+To write arrays, we use bracket notation. Note that we can have all sorts of values in the array, including other arrays, and even other objects.
+
+let fruits = ["mango", "cherry", "apple", true, false, 33, 3.1415, [1,2,3], {a: "apple", b: "ball"}];
+
+Then to access individual items in the array, we use index notation:
+
+fruits[1]
+fruits[7]
+fruits[8]
+
+With Arrays, order matters, unlike with other Objects.
 
