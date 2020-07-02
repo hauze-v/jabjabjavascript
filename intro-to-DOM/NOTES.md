@@ -47,3 +47,11 @@ innerWidth
 In JavaScript, every function is an object. An object is a collection of key:value pairs. If a value is a primitive (number, string, boolean), or another object, the value is considered a property. If a value is a function, it's called a method.
 
 Within the scope of an object, a function is referred to as a method of that object. It is invoked from the object namespace `MyObj.theMethod()`. Since we said that a function is an object, a function within a function can be considered a method of that function.
+
+## Difference between nodes and elements ##
+In the DOM heirarchy, everything is a Node.
+
+An element, is a specific type of Node. For example, take a paragraph tag. The p tag itself is the paragraph node and the text inside is called the text node. Together though, they're called an Element. There are lots of other Nodes on the DOM, like comments. HTML comments are nodes as well.
+
+Just know that the DOM is made up of many Nodes and Nodes sit above elements in the heirarchy.
+
