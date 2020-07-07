@@ -55,3 +55,19 @@ An element, is a specific type of Node. For example, take a paragraph tag. The p
 
 Just know that the DOM is made up of many Nodes and Nodes sit above elements in the heirarchy.
 
+## Null && Undefined ##
+Let's say you try to console.log something that does not exist, you'll receive a "ReferenceError: age is not defined"
+
+Not defined. In this case.
+
+If you define it but don't assign it anything, you'll receive: "undefined"
+
+let age;
+console.log(age) // this will be "undefined"
+
+Undefined means a variable was declared, but not defined.
+
+If you give a variable that's declared, a value of null, it will return null. It's how you can avoid undefined errors when you want something to be blank or have no value.
+
+Because of that, null is safer. 
+
