@@ -69,5 +69,18 @@ Undefined means a variable was declared, but not defined.
 
 If you give a variable that's declared, a value of null, it will return null. It's how you can avoid undefined errors when you want something to be blank or have no value.
 
-Because of that, null is safer. 
+Because of that, null is safer.
 
+## Changing Attributes with JavaScript ##
+Use the .getAttribute and .setAttribute methods
+
+## DOM Traversals ##
+Sometimes we need more than being able to just grab one thing on the DOM, directly.
+
+Sometimes we need to travel, walk, or traverse through things on the Document Object Moodel.
+
+In the DOM heirarchy, since everything's a node, we have something called the parent/child relationship. We also have a sibling relationship.
+
+In our image example, the ul node is the "parentNode" and the li nodes are children of the ul nodes. The li node in the middle has even more childNodes. You can access the first child by using the firstChild property and the last by using the lastChild property.
+
+The li in the middle has a previousSibling property and a nextSibling property.
