@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Lato, sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* The purpose of transition property here is to ensure any and "all" changes to nav display in a nice easy transition over 0.3 seconds */
+.nav {
+  transition: 0.3s all ease;
+  position: absolute;
+  width: 260px;
+  /* This will make the navBar hidden from the page */
+  left: -260px;
+  height: 100%;
+  background: #27292F;
+  z-index: 9999;
+}
+
+.open {
+  left: 0px;
+}
+
+.menu {
+  list-style-type: none;
+}
+
+.menu__item {
+  font-size: 1.4rem;
+  color: #eee;
+  border-bottom: 1px solid #333;
+  padding: 1.2rem;
+  text-transform: uppercase;
+  transition: 0.3s all ease;
+}
+
+.menu__item:hover {
+  background: #111;
+  cursor: pointer;
+}
+
+/* --- HAMBURGER ICON --- */
+.hamburger {
+  position: absolute;
+  top: 10px;
+  right: -50px;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  background: #222;
+  margin: 6px 0;
+  height: 6px;
+  width: 36px;
+  border-radius: 2px;
+  position: relative;
+  transition: 0.5s all ease;
+}
+
+.change.first-bar {
+  top: 11px;
+  transform: rotate(45deg);
+}
+
+.change.second-bar {
+  opacity: 0;
+}
+
+.change.third-bar {
+  bottom: 13px;
+  transform: rotate(-45deg);
+}
+
+/* --- MAIN CONTENT --- */
+.content {
+  padding: 2rem;
+  transition: 0.3s all ease;
+}
+
+.shift {
+  margin-left: 260px;
+}
+
+.content__heading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.content__details {
+  padding: 1rem;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.content__details a {
+  text-decoration: none;
+}
+
+.content__image {
+  padding: 1rem;
+  width: auto;
+  height: auto;
+}
