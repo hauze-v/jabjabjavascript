@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this page is to learn how to build a modal using html, css, and js">
+  <title>The Jab Modal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Join button that opens modal -->
+  <button class="trigger">Join</button>
+
+  <div class="modal">
+    <div class="modal__content">
+      
+      <!-- Modal header -->
+      <div class="modal__header">
+        <h1 class="modal__title">JabJabJavascript</h1>
+        <button class="close" type="button">
+          <!-- This span contains the HTML entity for the perfect X icon -->
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal__body">
+        <h3>Get weekly awesome tutorials straight to your inbox</h3>
+        <p>No BS. Only quality goodies.</p>
+
+        <!-- Form -->
+        <form class="form" action="/">
+          <label for="email">Email:
+            <input class="form__email" type="email" placeholder="example@gmail.com">
+          </label>
+          <label for="submit">
+            <input class="form__submit" type="submit" value="Join">
+          </label>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
