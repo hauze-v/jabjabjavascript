@@ -75,16 +75,16 @@ body {
 }
 
 /* Animation classes for hamburger bars (span elements) */
-.change.first-bar {
+.change.first__bar {
   top: 11px;
   transform: rotate(45deg);
 }
 
-.change.second-bar {
+.change.second__bar {
   opacity: 0;
 }
 
-.change.third-bar {
+.change.third__bar {
   bottom: 13px;
   transform: rotate(-45deg);
 }
