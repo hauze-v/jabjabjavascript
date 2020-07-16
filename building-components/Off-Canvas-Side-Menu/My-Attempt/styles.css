@@ -10,3 +10,116 @@ body {
   font-family: Lato, sans-serif;
 }
 
+/* The purpose of the transition property here is to ensure any and "all" changes to nav display in a nice easy transition over 0.3 seconds. */
+.nav {
+  transition: 0.3s all ease;
+  position: absolute;
+  width: 260px;
+  /* This will make the nav hidden from the page to start */
+  left: -260px;
+  height: 100%;
+  background: #27292F;
+  z-index: 9999;
+}
+
+/* Class used to display nav using js event listener */
+.open {
+  left: 0px;
+}
+
+.menu {
+  list-style-type: none;
+}
+
+.menu__item {
+  font-size: 1.4rem;
+  color: #eee;
+  border-bottom: 1px solid #333;
+  padding: 1.2rem;
+  text-transform: uppercase;
+  transition: 0.3s all ease;
+}
+
+.menu__item:hover {
+  background: #111;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- HAMBURGER ICON --- */
+.hamburger {
+  position: absolute;
+  top: 10px;
+  right: -50px;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hamburger span {
+  /* This simply stacks the spans like blocks instead of inline */
+  display: block;
+  background: #222;
+  margin: 6px 0;
+  height: 6px;
+  width: 36px;
+  border-radius: 2px;
+  position: relative;
+  transition: 0.5s all ease;
+}
+
+/* Animation classes for hamburger bars (span elements) */
+.change.first-bar {
+  top: 11px;
+  transform: rotate(45deg);
+}
+
+.change.second-bar {
+  opacity: 0;
+}
+
+.change.third-bar {
+  bottom: 13px;
+  transform: rotate(-45deg);
+}
+
+/* --- MAIN CONTENT --- */
+.content {
+  padding: 2rem;
+  transition: 0.3s all ease;
+}
+
+/* Class used to shirt content over when nav menu opens */
+.shift {
+  margin-left: 260px;
+}
+
+.content__heading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.content__details {
+  padding: 1rem;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.content__details a {
+  text-decoration: none;
+}
+
+.content__image {
+  padding: 1rem;
+  width: auto;
+  height: auto;
+}
+
+
+
