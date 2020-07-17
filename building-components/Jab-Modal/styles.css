@@ -1,34 +1,31 @@
-@import url('https://fonts.google.com/css?family=Pacifico|Lato');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Lato');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background: #DDD7CE;
-  font-family: pacifico, sans-serif;
 }
-
 .trigger {
   display: block;
   margin: 2rem auto;
+  text-align: center;
   font-size: 2rem;
   font-family: sans-serif;
   padding: 1rem 2rem;
   color: white;
   background: #2C3344;
-  text-decoration: none;
   border-radius: 4px;
   outline: 0;
 }
-
 .trigger:hover {
   cursor: pointer;
 }
 
-/* --- MODAL STYLES --- */
+
+/*** modal styles ***/
 .modal {
   display: none;
   position: fixed;
@@ -37,10 +34,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   padding-top: 0px;
 }
-
 .modal__content {
   background: #2C3344;
   width: 80%;
@@ -51,21 +47,17 @@ body {
   position: relative;
   animation: 0.3s slideDown;
 }
-
-/* --- CUSTOM ANIMATION --- */
-/* keyframes typically have a starting state and an ending state */
+/*** custom animation ***/
 @keyframes slideDown {
   from {
     top: -100px;
-    opacity: 0;
+    opacity: 0
   }
   to {
     top: 0;
-    opacity: 1;
+    opacity: 1
   }
 }
-
-/* Class to be added to modal which changes display none to display block */
 .open {
   display: block;
 }
@@ -75,8 +67,6 @@ body {
   font-family: pacifico, sans-serif;
   color: white;
 }
-
-/* Close button */
 .close {
   position: absolute;
   color: #DDD7CE;
@@ -87,12 +77,10 @@ body {
   border: 0;
   outline: 0;
 }
-
 .close:hover {
   cursor: pointer;
 }
-
-.modal_body {
+.modal__body {
   padding: 2rem;
   text-align: center;
   font-family: Lato, sans-serif;
@@ -100,11 +88,11 @@ body {
   line-height: 2rem;
 }
 
-/* --- FORM STYLES --- */
+
+/*** form styles ***/
 .form {
   margin-top: 2rem;
 }
-
 .form__email {
   color: #DDD7CE;
   width: 100%;
@@ -115,7 +103,6 @@ body {
   padding: 1rem;
   background: transparent;
 }
-
 .form__submit {
   display: block;
   margin-left: auto;
@@ -130,12 +117,10 @@ body {
   border-radius: 4px;
   outline: 0;
 }
-
 .form__submit:hover {
   cursor: pointer;
   opacity: 0.9;
 }
-
 ::placeholder {
   color: #DDD7CE;
 }
