@@ -11,7 +11,14 @@ function main() {
   closeModalTriggerEl.addEventListener("click", function() {
     modalEl.classList.remove("open");
   })
-  
+
+  // Add event to close modal if clicking outside the modalEl 
+  window.addEventListener("click", function(event) {
+    if (event.target === modalEl) {
+      modalEl.classList.remove("open");
+    }
+  })
+
 }
 
 main();
