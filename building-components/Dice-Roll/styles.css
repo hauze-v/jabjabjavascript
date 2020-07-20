@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  background: #e6e6e6;
+  padding: 10px;
+}
+.game__container {
+  background: #161616;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.dice__trigger {
+  padding: 1rem 1.25rem;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 4px;
+  background: #c4c7c6;
+}
+.dice__trigger:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.dice__result {
+  display: block;
+  margin: 30px auto;
+}
+
+
