@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to practice building modals in JS.">
+  <title>Adam's JavaScript Modal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Join button that opens modal -->
+  <button class="trigger">Join</button>
+
+  <div class="modal">
+    <div class="modal__content">
+      <!-- Modal header -->
+      <div class="modal__heading">
+        <h1 class="modal__title">hyper style script</h1>
+        <button class="close" type="button">
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <h3>Get weekly value-driven lessons straight to your inbox</h3>
+        <p>No B.S. Only my quality tips and tricks.</p>
+
+        <form action="/" class="form">
+          <label for="email">
+            <input type="email" placeholder="Your email here..." class="form__email">
+          </label>
+          <label for="submit">
+            <input type="submit" value="Join" class="form__submit">
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
