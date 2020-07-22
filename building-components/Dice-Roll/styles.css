@@ -24,7 +24,14 @@ body {
   cursor: pointer;
   opacity: 0.8;
 }
+.spin {
+  animation: 2s spin;
+}
 
-@keyframes 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 
