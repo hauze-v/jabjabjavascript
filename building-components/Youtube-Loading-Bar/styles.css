@@ -9,7 +9,6 @@
   width: 100%;
 }
 .loading-bar__item {
-  width: 5%;
   height: 4px;
   background-color: red;
 }
