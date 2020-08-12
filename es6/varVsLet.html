@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learning es6!">
+  <title>Say Hello to es6!</title>
+</head>
+<body>
+  <script>
+
+    function yell() {
+      var sentence = "I'm going to the movies";
+
+      if (true) {
+        var insideIf = "this is inside if statement";
+        let insideIf2 = "this is inside if statement";
+      }
+
+      console.log(insideIf); /* This works */
+      console.log(insideIf2); /* This does NOT work because let variables are BLOCK scoped */
+      // 99% of the time you'll use let and const and NOT var
+    }
+
+    console.log(sentence); /* This would not work, because var variables are function scoped */
+
+  </script>
+</body>
+</html>
