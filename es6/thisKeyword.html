@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to learn about the es6 'this' keyword.">
+  <title>Arrow Functions  and "this"</title>
+</head>
+<body>
+  <script>
+    console.log(this); // window (global context / variable)
+
+    function hello() {
+      console.log(this)
+    }
+    hello() // this will still give you window
+
+    const adam = {
+      fullName: "Adam Mcboy",
+      age: 23,
+      intro: function() {
+        console.log(this);
+      },
+      changeAge: function() {
+        this.age = 24;
+      }
+    }
+
+    adam.intro(); // refers to the object  "adam"
+    adam.changeAge();
+    console.log(`Adam's age: ${adam.age}`)
+
+    /* If you use an arrow function, it doesn't change the context of "this" from window to the Object. It will still be the "Window" object */
+  </script>
+</body>
+</html>
