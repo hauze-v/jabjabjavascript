@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to learn the difference between rest and spread in JS.">
+  <title>Rest vs Spread Operator</title>
+</head>
+<body>
+  <script>
+    /* There's a built-in arguments object in JS that let's you take care of infinite arguments */
+    function adder() {
+      let total = 0;
+      for (let elem of arguments) {
+        total += elem;
+      }
+      console.log(total);
+    }
+
+    /* You can also use the ...rest operator which takes a list of comma separated values and puts them into an array */
+    function restOperator(...values) { // it can be named anything (...rest, ...mango, ...values)
+      let total = 0;
+      for (let elem of values) {
+        total += elem;
+      }
+
+      console.log(total);
+    }
+
+    /* The spread operator does the opposite: converts an array to series of comma separated arguments */
+    let result = [];
+    let nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]; // in order to push this array we'd have to loop through it and push each indv number
+
+    result.push(2,3,4);
+    result.push(...nums); // OR we can use the spread operator to convert array to comma separated arguments and push the whole thing at once
+    console.log(result);
+    
+
+    adder(2, 3, 3, 4, 38, 29)
+    adder(2, 3, 3, 4, 38, 322)
+  </script>
+</body>
+</html>
