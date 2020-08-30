@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to learn about Object Literals in JS.">
+  <title>Object Literals</title>
+</head>
+<body>
+  Name: <br>
+  <input type="text" id="name">
+  <br>
+  Email: <br>
+  <input type="email" id="email">
+
+  <button>Get info</button>
+
+  <script>
+    /* --- es5 Way of defining object literals --- */
+    let obj = {};
+    obj.name = "Adam";
+    obj.age = 26;
+    obj.talk = function() {
+      console.log('yo wassup')
+    }
+
+    let human = {
+      name: 'Adam',
+      age: 26,
+      talk: function() {
+        console.log('hola')
+      }
+    }
+
+    /* --- es6 Way of defining object literals EVEN BETTER --- */
+    let robot = {
+      a: 1,
+      b: 2,
+      c: 3
+    } // sometimes we want the value to be a dynamic variable
+
+    let a = 'alpha';
+    let b = 'beta';
+    let c = 'charlie';
+
+    let militaryUnit = {
+      a: a,
+      b: b,
+      c: c
+    } // when the key|value pair is the same, you can simply remove it!
+
+    let militarySolider = {
+      a,
+      b,
+      c,
+      d: 'delta',
+      talk () { // in es6 we can ditch the function keyword
+        console.log("i'm talking, how bout you?")
+      }
+    }
+
+    console.log(militarySolider);
+    militarySolider.talk();
+
+    function displayInfo() {
+      const nameEl = document.querySelector('#name')
+      const emailEl = document.querySelector('#email')
+      const buttonEl = document.querySelector('button')
+
+      buttonEl.addEventListener('click', function() {
+        let name = nameEl.value;
+        let email = emailEl.value;
+
+        let result = {
+          name,
+          email
+        }
+
+        console.log(result);
+      })
+    }
+
+    displayInfo();
+
+  </script>
+</body>
+</html>

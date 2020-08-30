@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="Learning about arrow functions">
+  <title>Arrow Functions!</title>
+</head>
+<body>
+  <button>Submit</button>
+  <script>
+    /* ------------ es5 way to create functions ------------ */
+
+    function add() { /* Normal function declaration */
+      console.log(2 + 2);
+    }
+    add();
+
+    let add2 = function() { /* es5 function expression way */
+      console.log(2 + 2);
+    }
+    add2();
+
+    document.querySelector("button").addEventListener("click", function() { /* Anonymous function declaration */
+      alert('hey');
+    })
+
+    /* ------------ es6 way to create functions ------------ */
+    let es6Add = (a, b) => {
+      console.log(a + b);
+    }
+    es6Add(7, 7);
+
+    let multiply = (x, y) => x * y; // if it's only one line in the block you can use implicit return and put it all on one line
+    
+  </script>
+</body>
+</html>

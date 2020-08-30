@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to learn how to destructure objects in JS.">
+  <title>Destructuring Objects</title>
+</head>
+<body>
+  <script>
+    const human = {
+      fullName: "Adam Hauze",
+      age: 26,
+      hobbies: ["gaming", "anime", "reading", "blogging"],
+      address: {
+        main: "123 main st",
+        apt: "Unit 204",
+        state: "CA",
+        zip: 22849
+      },
+      hairColor: "brown",
+      eyeColor: "blue",
+      height: 6.2
+    }
+
+    /* In es5 ------------------------------------------------- */
+    /* Use variables just like you would with HTML DOM elements */
+    const fullName = human.fullName;
+
+    /* In es6 ------------------------------------------------- */
+    const {hobbies} = human;
+
+    /* You can even do all of them at once: */
+    const {age, hairColor, eyeColor} = human;
+
+    /* What if you want to rename the variable? */
+    const {address: homeAddress} = human;
+    console.log(homeAddress);
+  
+  </script>
+</body>
+</html>

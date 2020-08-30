@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to learn template strings in vanilla JS.">
+  <title>Template Strings</title>
+</head>
+<body>
+  <script>
+    /* es5 Strings */
+    function display(name, age, profession) {
+      console.log("My name is " + name + ". I'm " + 26 + " years old.")
+    }
+
+    /* es6 Strings */
+    console.log(`My name is ${name}. I'm ${age} years old.`)
+
+    let html = `
+      <div>
+        <p> hi this is a paragraph </p>
+        <h1> this is some heading </h1>
+      </div>
+    `
+    document.querySelector("body").innerHTML = html;
+  </script>
+</body>
+</html>

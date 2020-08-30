@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background: #1e1e1e;
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.dice__title {
+  background-color: #eee;
+  color: #111;
+  padding: 1.5rem;
+}
+.dice__trigger {
+  font-size: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+  margin: 2rem 0;
+}
+.dice__trigger:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.spin {
+  animation: 2s spin;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
