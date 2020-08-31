@@ -29,4 +29,24 @@ Let's explore creating classes via constructors and creating object instances fr
 
       When we are calling our constructor function, we are defining greeting() every time, which isn't ideal. To avoid this, we can define functions on the prototype instead, which we will look at later.
 
-2. Create a finished constructor
+## Other ways to create object instances ##
+So far we've seen two different ways to create an object instance - declaring an object literal and using a constructor function.
+
+### The Object() constructor ###
+First of all, you can use the Object() constructor to create a new object. Yes, even generic objects have a constructor, which generates an empty object
+
+let person1 = new Object()
+
+### Using the create() method ###
+Constructors can help you give your code order - you can create consturctors in one place, then create instances as needed, and it's clear where they came from.
+
+However, some peopel prefer to create object instances without first creating constructors, especially if they are creating only a few instances of an object. JavaScript has a built-in method called `create()` that allows you to do that. With it, you can create a new object based on an existing object.
+
+let person4 - Object.create(person1);
+
+This defines a new object (person4) based on the already define object (person1) - it will have the same properites and method's available to person1
+
+One limitation of `create()` is that IE8 doesn't support it. So constructors may be more effective if you want to support older browsers.
+
+We'll explore the effects of `create()` in more detail later on.
+      

@@ -14,15 +14,26 @@
 
     <script>
       /* Constructor function */
-      function Person(name) {
-        this.name = name;
+      function Person(first, last, age, gender, interests) {
+        this.name = {
+          first: first,
+          last: last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        this.bio = function() {
+          alert(`${this.name.first} ${this.name.last} is ${this.age} years old. He likes ${this.interests[0]} and ${this.interests[1]}.`)
+        };
         this.greeting = function() {
-          alert(`Hiya! I'm ${this.name}.`)
+          alert(`Hiya! I'm ${this.name.first}.`)
         }
       }
 
       /* Call the constructor to create some people objects */
       let person1 = new Person("Adam");
       let person2 = new Person("Emily");
+      
+      let adam = new Person("Adam", "Hauze", 26, "male", ["gaming", "hiking"])
     </script>
 </html>
