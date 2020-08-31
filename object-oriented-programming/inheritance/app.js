@@ -28,7 +28,7 @@ function Fighter(name, age, art) {
   this.art = art;
 }
 Fighter.prototype = Object.create(Person.prototype);
-Fighter.prototype.constructor = Fighter;
+Fighter.prototype.constructor = Fighter; // need to set the constructor back to original constructor
 
 const johnny = new Fighter("John Bones", 79, "Karate")
 console.log(johnny.constructor);

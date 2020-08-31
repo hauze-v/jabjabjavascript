@@ -33,5 +33,3 @@ person['age'];
 person['name']['first'];
 
 This looks very similar to how you access the items in an array, and it's basically the same thing - instead of using an index number to select an item, you are using the name associated with each member's value.
-
-## Setting object members ##
