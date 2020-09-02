@@ -42,6 +42,8 @@ Constructors can help you give your code order - you can create consturctors in 
 
 However, some peopel prefer to create object instances without first creating constructors, especially if they are creating only a few instances of an object. JavaScript has a built-in method called `create()` that allows you to do that. With it, you can create a new object based on an existing object.
 
+**This is also known as prototype linking!**
+
 let person4 - Object.create(person1);
 
 This defines a new object (person4) based on the already define object (person1) - it will have the same properites and method's available to person1
