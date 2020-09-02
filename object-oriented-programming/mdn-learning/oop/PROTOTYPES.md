@@ -17,4 +17,22 @@ Let's look at an example to make things clearer.
 ## Understanding prototype objects ##
 Here we'll go back to the example in which we finished writing our `Person()` constructor. 
 
-In this example
+If you type 'person1' into your JavaScript console, you should see the browser try to auto-complete this with the member names available on this object.
+
+In this list, you'll see the members defined on person1's constructor - `Person() - name, age, gender, interests, bio, and greeting`. You'll also notice, however, other members - `toString, valueOf`, etc - these are define on `person1`'s prototype object's prototype object, which is `Object.prototype`.
+
+`person1` --> inherits from prototype --> `Person()` --> inherits from prototype `Object`
+
+What happens when you call a method on `person1`, which is actually defined on `Object.prototype`?
+
+`valueOf()` returns the value of the object it is called on. In this case, what happens is:
+    - The browser initially checks to see if `person1` object has a `valueOf()` method available on it, as defined on its constructor, `Person()` AND IT DOESN'T
+    - The browser then checks to see if the `person1`'s prototype object has a `valueOf()` method available on it. It doesn't, so then the browser checks `person1`'s prototype object's prototype object, and it *does* have one. So the method is called, and all is good!
+
+*Note*: The methods and properties are **not** copied from one object to another in the prototype chain. They are *accessed* by *walking up the chain*.
+
+*Note*: Before ECMAScript 2015, there wasn't officially a way to access an object's **prototype** directly - the "links" between the items in the chain are defined in an internal property, referred to as [[prototype]] in the specification for JS.
+
+Most modern browsers however, do offer a property called __proto__, which contains the object's constructor's **prototype** object. For example, try person1.__proto__ and person1.__proto__.__proto__ to see what the chain looks like in code.
+
+Since ECMAScript 2015, you can access an object's prototype object indirectly via `Object.getPrototypeOf(obj)`
