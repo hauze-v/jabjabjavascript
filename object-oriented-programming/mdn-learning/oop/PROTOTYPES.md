@@ -15,4 +15,6 @@ The former is the property on each instance, and the latter is the property on t
 Let's look at an example to make things clearer.
 
 ## Understanding prototype objects ##
-Here we'll 
+Here we'll go back to the example in which we finished writing our `Person()` constructor. 
+
+In this example
