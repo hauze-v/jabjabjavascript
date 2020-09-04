@@ -36,3 +36,29 @@ What happens when you call a method on `person1`, which is actually defined on `
 Most modern browsers however, do offer a property called __proto__, which contains the object's constructor's **prototype** object. For example, try person1.__proto__ and person1.__proto__.__proto__ to see what the chain looks like in code.
 
 Since ECMAScript 2015, you can access an object's prototype object indirectly via `Object.getPrototypeOf(obj)`
+
+
+## The prototype property: Where inherited members are defined ##
+Inherited properties and methods are ones defined on the `prototype` property - that is, the ones that begin with `Object.prototype`. The `prototype` property's value is an object, which is basically a bucket for storing properties and methods that we want to be inherited by objects further down the prototype chain.
+
+So `Object.prototype.toString()`, `Object.prototype.valueOf()`, etc. are available to any object types that inherit from `Object.prototype`, including new object instances created from our `Person()` constructor.
+
+`Object.is()`, `Object.keys()`, and other members *not* defined inside the prototype buckeet are not inherited by object instances or object types that inherit from `Object.prototype`
+
+**Note**: This seems strange - how can you have a method defined on a constructor, which is itself a function?
+
+Well, a function is also a type of object.
+
+1. You can check out existing prototype properties for yourself - go back to our previous example and try entering the following into the JavaScript console:
+
+2. The output won't show you very much because we haven't defined anything on our custom constructor's prototype, but you should see a prototype property which contains an Obect (the parent prototype) and the respective properties and methods there.
+
+    Here you'll see large number of methods defined on `Object's prototype` property, which are then available to objects that inherit from `Object`, as we know.
+
+You'll see other examples of prototype chain inheritance all over JavaScript - try looking for the methods and properties defined by the prototype of the String, Date, Number, and Array global objects, for example. These all have a number of members defined on their prototype, which is why for example, when you create a string like this:
+
+let myString = 'This is my string.';
+
+`myString` immediately has a number of userful methods available on it, like `split()`, `indexOf()`, `replace()`, etc.
+
+**Note**: The `prototype` property is one of the most confusingly-named parts of JavaScript - you might think that `this` points to the prototype object of the current object, but it doesn't (that's an internal object that can be accessed by __proto__). `prototype` instead is a property containing an object on which you define members that you want to be inherited.
