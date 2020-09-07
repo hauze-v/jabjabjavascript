@@ -43,7 +43,7 @@ Inherited properties and methods are ones defined on the `prototype` property - 
 
 So `Object.prototype.toString()`, `Object.prototype.valueOf()`, etc. are available to any object types that inherit from `Object.prototype`, including new object instances created from our `Person()` constructor.
 
-`Object.is()`, `Object.keys()`, and other members *not* defined inside the prototype buckeet are not inherited by object instances or object types that inherit from `Object.prototype`
+`Object.is()`, `Object.keys()`, and other members *not* defined inside the prototype bucket are not inherited by object instances or object types that inherit from `Object.prototype`
 
 **Note**: This seems strange - how can you have a method defined on a constructor, which is itself a function?
 
@@ -51,7 +51,7 @@ Well, a function is also a type of object.
 
 1. You can check out existing prototype properties for yourself - go back to our previous example and try entering the following into the JavaScript console:
 
-2. The output won't show you very much because we haven't defined anything on our custom constructor's prototype, but you should see a prototype property which contains an Obect (the parent prototype) and the respective properties and methods there.
+2. The output won't show you very much because we haven't defined anything on our custom constructor's prototype, but you should see a prototype property which contains an Object (the parent prototype) and the respective properties and methods there.
 
     Here you'll see large number of methods defined on `Object's prototype` property, which are then available to objects that inherit from `Object`, as we know.
 
@@ -62,3 +62,24 @@ let myString = 'This is my string.';
 `myString` immediately has a number of userful methods available on it, like `split()`, `indexOf()`, `replace()`, etc.
 
 **Note**: The `prototype` property is one of the most confusingly-named parts of JavaScript - you might think that `this` points to the prototype object of the current object, but it doesn't (that's an internal object that can be accessed by __proto__). `prototype` instead is a property containing an object on which you define members that you want to be inherited.
+
+## Revisiting create() ##
+Earlier, we went over the `Object.create()` method and how it can be used to create a new object based off another
+
+let person2 = Object.create(person1);
+
+What create() actually does is create a new object from a specified prototype object. Here, `person2` is being created using `person1` as a
+prototype object. You can check this by entering the following in the console.
+
+## The constructor property ##
+Every constructor function has a `prototype` property whose value is an object containing a `constructor` property. This `constructor` property points to the original constructor function
+
+Looking at our example, properties defined on the `Person.prototype` property (or in general on a constructor function's `prototype property`, which is an object) become available to all the instance objects created using the `Person()` constructor. Hence, the constructor property is also available on both `person1` and `person2` objects.
+
+For example:
+`person1.constructor`
+`person2.constructor`
+
+These should both return the `Person()` constructor, as it contains the original definition of these instances.
+
+## Modifying Prototypes ##
