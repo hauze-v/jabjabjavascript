@@ -83,3 +83,26 @@ For example:
 These should both return the `Person()` constructor, as it contains the original definition of these instances.
 
 ## Modifying Prototypes ##
+Let's try modifying the `prototype property` of a constructor function - methods added to the prototype are then available to all object instances created from the constructor. At this point, we'll finally add something to our `Person()` constructor's prototype.
+
+Add the following below our Person() constructor.
+
+Person.prototype.farewell = function() {
+    alert("this.name.first + " has left the building. Bye for now!")
+}
+
+You should get an alert message displayed, featuring the person's name as defined inside the constructor. This is really useful, but what is even more useful is that the whole inheritance chain has updated dynamically, automatically making this new method available on all object instances derived from the constructor.
+
+Even when we define the constructor first, create an instance object from the constructor, and *then* add a new method to the constructor's prototype, the `farewell()` method is *still* on the `person1` and `person2` object instances - its members have been automatically updated to include the newly define `farewell()` method.
+
+You'll rarely see properties defined on the prototype property, because they are not very flexible when defined like this. For example, you could add a property like:
+
+`Person.prototype.fullName = 'Bob Smithers';`
+
+This isn't very flexible, as the person might not be called that. It'd be much better to build the `fullName` out of `name.first` and `name.last`:
+
+`Person.prototype.fullName = ${this.name.first} ${this.name.last}`
+
+However, this doesn't work. That's because `this` will be referencing the global scope in this case, not the function scope. Calling this property would return `undefined`. This worked fine on the method we defined earlier in the prototype because it's sitting inside a function scope, which will be transferred successfully to the object instance scope. So you might define constant properties on the prototype (i.e. ones that never need to change), but generally it works better to define properties inside the constructor.
+
+In fact, a fairly common pattern for more object definitions is to define the properties inside the constructor, and the methods on the prototype. This makes the code easier to read, as the constructor only contains the property definitions, and the methods are split off into separate blocks. 
