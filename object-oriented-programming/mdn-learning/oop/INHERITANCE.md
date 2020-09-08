@@ -50,3 +50,14 @@ All is good so far, but we've a problem. We have defined a new constructor, and 
 Nor does the constructor *inherit* those methods.
 
 We need to get `Teacher()` to inherit the methods defined on `Person()`'s prototype. So how do we do that?
+
+## Giving Teacher() a new greeting() function ##
+To finish off our code, we need to define it on `Teacher()`'s prototype - add the following at the bottom of your code:
+
+The technique we covered here is not the only way to create inheriting classes in JavaScript, but it works OK, and it gives you a good idea about how to implement inheritance in JavaScript.
+
+You might also be interested in checking out some of the new ECMAScript features that allow us to do inheritance more cleanly in JavaScript (classes). We didn't cover those here, as they are not yet supported very widely across browsers. All the other code constructs we discussed in this set of articles are supported as far back as IE9 or earlier, and there are ways to achieve earlier support than that.
+
+A common way is to use a JavaScript library - most of the popular options have an easy set of functionality available for doing inheritance more easily and quickly.
+
+`CoffeeScript` for example provides `class`, `extends`, etc.

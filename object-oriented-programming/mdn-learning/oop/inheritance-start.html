@@ -101,9 +101,26 @@
 
   /* Have Teacher() inherit Person()'s methods by creating a new object from Person.prototype and assigning it to Teacher.prototype */
   Teacher.prototype = Object.create(Person.prototype);
-  Teacher.prototype.constructor = Teacher; // 
+  Teacher.prototype.constructor = Teacher; // We have to then fix the reference back to Teacher's constructor
+
+  /* Overwrite the greeting function on Teacher.prototype */
+  Teacher.prototype.greeting = function () {
+    let prefix;
+
+    if (this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+      prefix = 'Mr.';
+    } else if (this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
+      prefix = 'Ms.';
+    } else {
+      prefix = 'Mx.';
+    }
+
+    alert('Hello. My name is ' + prefix + ' ' + this.name.last + ', and I teach ' + this.subject + '.');
+  };
 
   let person1 = new Person('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing']);
+  let teacher1 = new Teacher('Dave', 'Griffiths', 31, 'male', ['football', 'cookery'], 'mathematics');
+  
 </script>
 
 </html>
