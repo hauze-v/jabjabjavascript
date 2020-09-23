@@ -72,3 +72,83 @@ To summarize, we've got four types of property/methods to worry about:
   3. Those defined on a constructor's prototype, which are inherited by all instances and inheriting object classes. These include any member defined on a Constructor's `prototype` property, e.g `myConstructor.prototype.someFunction().`
 
   4. Those available on an object instance, which can either be an object created when a constructor is instantiated like we saw above, or an object literal.
+
+## ECMAScript 2015 Classes ##
+In this section, we'll convert the Person and Teacher examples from prototypal inheritance to class-based inheritance.
+
+Let's look at a rewritten version of the Person example, class-style:
+
+class Person {
+  constructor(first, last, age, gender, interests) {
+    this.name = {
+      first,
+      last
+    };
+    this.age = age;
+    this.gender = gender;
+  }
+
+  greeting() {
+    // ...
+  }
+
+  farewell() {
+    // ...
+  }
+}
+
+**Note**: Under the hood, our classes are being converted into Prototypal Inheritance models - this is just syntactic sugar. But as you can see, it's easier to write.
+
+### Inheritance with class syntax ###
+Above, we created a class to represent a person. They have a series of attributes that are common to all people; in this section we'll create our specialized `Teacher` class, making it inherit from `Person` using modern class syntax. This is called creating a subclass or subclassing.
+
+To create a subclass we use the `extends keyword` to tell JavaScript the class we want to base our class on.
+
+class Teacher extends Person {
+  constructor(subject, grade) {
+    this.subject = subject;
+    this.grade = grade;
+  }
+}
+
+... but there's a little catch.
+
+Unlike old-school constructor functions where the `new operator` does the initialization of `this` to a newly-allocated object, this isn't automatically initialized for a class defined by the `extends` keyword (i.e. the subclass).
+
+Therefore, running this code would result in an error:
+`Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor`
+
+For sub-classes, the `this` initialization to a newly allocated object is always dependant on the parent class constructor, i.e. the constructor function of the class from which you're extending.
+
+Here we are extending the `Person` class - the `Teacher` sub-class is an extension of the `Person` class, So for `Teacher`, the `this` initialization is done by the `Person` constructor.
+
+## Getters and Setters ##
+There may be times when we want to change the values of an attribute in the classes we create or we don't know what the final value of an attribute will be. Using the Teacher example, we may not know what subject the teacher will teach before we create them, or their subject may change between terms.
+
+We can handle such situations with getters and setters.
+
+Let's enhance the Teacher class with getters and setters. The class starts the same...
+
+Getters and setters work in pairs. A getter returns the current value of the variable and its corresponding setter changes the value of the variable to the one it defines.
+
+The modified `Teacher` class looks like this:
+
+class Teacher extends Person {
+  constructor(first, last, age, gender, interests, subject, grade) {
+    super(first, last, age, gender, interests);
+    this.subject = subject;
+    this.grade = grade;
+  }
+
+  get subject() {
+    return this._subject;
+  }
+
+  set subject(newSubject) {
+    this._subject = newSubject;
+  }
+}
+
+We use the _ to create a separate value in which to store our name property. Without using this convention, we would get errors everytime we called get or set. At this point:
+  To show the current value of the _subject property of the snape object, we can use the snape.subject getter method.
+  To assign a new value to the _subject property we can use the snape.subject = "new value" setter method

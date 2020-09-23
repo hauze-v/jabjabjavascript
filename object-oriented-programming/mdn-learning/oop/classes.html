@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to practice and understand es6 classes in JS.">
+  <title>ECMAScript 2016 Classes</title>
+</head>
+
+<body>
+
+  <script>
+    class Person {
+      constructor(first, last, age, gender, interests) {
+        this.name = {
+          first,
+          last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+      }
+
+      greeting() {
+        console.log(`Hi there! I'm ${this.name.first}.`)
+      }
+
+      farewell() {
+        console.log(`${this.name.first} has left the building. Bye for now!`)
+      }
+    }
+
+    let han = new Person('Han', 'Solo', 25, 'male', ['Smuggling']);
+    han.greeting(); // Hi there! I'm Han.
+
+    let leia = new Person('Leia', 'Organa', 19, 'female', ['Government']);
+    leia.farewell(); // Leia has left the building. Bye for now!
+
+    class Teacher extends Person {
+      constructor(first, last, age, gender, interests, subject, grade) {
+        super(first, last, age, gender, interests); // Now 'this' is initialized by calling the parent constructor
+        
+        // Subject and grade are specific to Teacher
+        this.subject = subject;
+        this.grade = grade;
+      }
+
+      // /* Getter and Setter methods */
+      // get subject() {
+      //   return this._subject;
+      // }
+
+      // set subject(newSubject) {
+      //   this._subject = newSubject;
+      // }
+    }
+
+    let snape = new Teacher("Severus", "Snape", 58, "male", ['Potions'], "Dark arts", 5);
+  </script>
+</body>
+
+</html>
