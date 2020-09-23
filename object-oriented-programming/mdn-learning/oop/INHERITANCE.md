@@ -152,3 +152,13 @@ class Teacher extends Person {
 We use the _ to create a separate value in which to store our name property. Without using this convention, we would get errors everytime we called get or set. At this point:
   To show the current value of the _subject property of the snape object, we can use the snape.subject getter method.
   To assign a new value to the _subject property we can use the snape.subject = "new value" setter method
+
+## Why would you use inheritance in JavaScript? ##
+Prototypes and inheritance represent some of the most complex aspects of JavaScript, but a lot of JavaScript's power and flexibility comes from its object structure and inheritance, and it's worth understanding how it works.
+
+In a way, you can use inheritance all the time. Whenever you use various features of a Web API, or methods/properties defined on a built-in browser object that you call on your strings, arrays, etc, you're implicitly using inheritance.
+
+In terms of using inheritance in your own code, you probably won't use it often, especially to begin with, and in small projects. It's a waste of time to use objects and inheritance just for the sake of it when you don't need them. But as your code basses get larger, you are more likely to find a need for it. If you find yourself starting to create a number of objects that have similar features, then creating a generic object type to contain all the shared functionality and inheriting those features in more specialized object types can be convenient and useful.
+
+**Note**: Because of the way JavaScript works, with the prototype chain, etc. the sharing of functionality between objects is often called **delegation**. Specalized objects delegate functionality to a generic object type.
+
