@@ -61,3 +61,14 @@ You might also be interested in checking out some of the new ECMAScript features
 A common way is to use a JavaScript library - most of the popular options have an easy set of functionality available for doing inheritance more easily and quickly.
 
 `CoffeeScript` for example provides `class`, `extends`, etc.
+
+## Object Member Summary ##
+To summarize, we've got four types of property/methods to worry about:
+
+  1. Those defined inside a constructor function that are given to object instances. These are easy to spot - the members defined inside a constructor using the `this.x = x` type lines
+
+  2. Those defined directly on the constructor themselves, that are available only on the constructor. These are commonly only available on built-in browser objects, and are recognized by being chained directly onto a constructor, *not* an instance. For example, `Object.keys()`. These are known as **static properties/methods**.
+
+  3. Those defined on a constructor's prototype, which are inherited by all instances and inheriting object classes. These include any member defined on a Constructor's `prototype` property, e.g `myConstructor.prototype.someFunction().`
+
+  4. Those available on an object instance, which can either be an object created when a constructor is instantiated like we saw above, or an object literal.
