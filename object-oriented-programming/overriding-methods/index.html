@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description"
+    content="The purpose of this webpage is to practice and learn how to override JS methods using Objects.">
+  <title>Overriding JS Methods</title>
+</head>
+
+<body>
+  <script>
+    // D&D Character constructor
+    function Character(name, race, classType, level, background) {
+      this.name = name;
+      this.race = race;
+      this.classType = classType;
+      this. level = level;
+      this. background = background;
+    }
+
+    Character.prototype.greet = function() {
+      return `Good day, my name is ${this.name} and I'm a ${this.race} and a level ${this.level} ${this.classType}.`
+    }
+  
+    // Elf constructor
+    function Elf(name, race, classType, level, background, type, abilities, rival) {
+      Character.call(this, name, race, classType, level, background);
+      this.type = type;
+      this.abilities = abilities;
+      this.rival = rival;
+    }
+
+    Elf.prototype = Object.create(Character.prototype);
+    Elf.prototype.constructor = Elf;
+
+    Elf.prototype.greet = function() {
+      return `${Character.prototype.greet.call(this)} You'll be pleased to know I'm a ${this.type} and don't enjoy the presence of ${this.rival}s.`
+    }
+
+    const mittens = new Character('Mittens', 'gnome', 'wizard', '18', 'student'); // basic character
+
+    // an elf that inherits properties and methods from character
+    const velroy = new Elf('Velroy', 'elf', 'bard', '12', 'pirate', 'wood elf', ['singing', 'healing', 'buffing party'], 'gnome'); 
+
+  </script>
+</body>
+
+</html>
