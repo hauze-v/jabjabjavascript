@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to practice and learn es6 classes in JavaScript.">
+  <title>es6 Classes</title>
+</head>
+
+<body>
+
+  <script>
+    class Person {
+      constructor(name, age,) {
+        this.name = name;
+        this.age = age;
+      }
+
+      greet() {
+        return `Hello there. My name's ${this.name} and I'm ${this.age} years old.`;
+      }
+    }
+
+    class Programmer extends Person {
+      constructor(name, age, language) {
+        super(name, age);
+        this.language = language;
+      }
+
+      talk() {
+        return `I'm a ${this.language} developer, yo.`;
+      }
+
+      greet() {
+        return `I code in ${this.language}`
+      }
+    }
+
+    class Fighter extends Person {
+      constructor(name, age, art) {
+        super(name, age);
+        this.art = art;
+      }
+
+      fight() {
+        return `Don't try me bro, I'm a ${this.art} fighter.`;
+      }
+    }
+
+    const fighter1 = new Fighter('Tonny', 26, 'Ju-Jitsu');
+    const a = new Programmer('Adam', 29, 'JavaScript')
+  </script>
+</body>
+
+</html>
