@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description"
+    content="The purpose of this webpage is to help understand the difference between prototypal inheritance and classical inheritance.">
+  <title>Prototypal Inheritance vs. Classical Inheritance</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    Two kinds of inheritance:
+      * classical (other programming languages have this but JS does not)
+
+      * prototypal:
+        - constructor pattern
+        - prototypal pattern
+    */
+
+    // --- Prototypal pattern ---
+    let person = {
+      greet: function() {
+        console.log(`Hi, I'm ${this.name}`);
+      }
+    }
+
+    let programmer = Object.create(person);
+    programmer.code = function() {
+      console.log(`I like to code in ${this.language}`);
+    }
+
+    let john = Object.create(programmer);
+    john.language = 'JavaScript';
+    john.name = 'John';
+
+    // --- Constructor pattern ---
+
+    // es5 pattern
+    function Character(name, age, height) {
+      this.name = name;
+      this.age = age;
+      this. height = height;
+    }
+
+    Character.prototype.greet = function() {
+       return `Hey wassup, my name's ${this.name}.`;
+    }
+
+    function ElfCharacter(name, age, race) {
+      Character.call(this, name, age);
+      this.race = race;
+    }
+
+    ElfCharacter.prototype = Object.create(Character.prototype);
+    ElfCharacter.prototype.constructor = ElfCharacter;
+
+    ElfCharacter.prototype.greet = function() {
+      console.log(`${Character.prototype.greet.call(this)} I"m a ${this.race}`);
+    }
+
+    const velroy = new ElfCharacter('Velroy', 265, 'Wood Elf');
+
+    // es6 pattern
+    class Vehicle {
+      constructor(make, model) {
+        this.make = make;
+        this.model = model;
+      }
+
+      sound() {
+        return `I'm a ${this.model}, vroom vroom`;
+      }
+    }
+
+    class Tractor extends Vehicle {
+      constructor(make, model, color) {
+        super(make, model);
+        this.color = color;
+      }
+
+      sound() {
+        return `${super.sound()} and I'm ${this.color} in color.`;
+      }
+    }
+
+    const tractor1 = new Tractor('John', 'Deer', 'green');
+
+
+
+
+  </script>
+</body>
+
+</html>
