@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas API Example</title>
+  <style>
+    .container {
+      width: 768px;
+      margin: 0 auto;
+    }
+
+    canvas {
+      border: 2px dotted black;
+      margin-left: 25%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <canvas class="my-canvas" height="155px"></canvas>
+  </div>
+
+
+  <script>
+    // Cache the DOM
+    const canvas = document.querySelector(".my-canvas");
+
+    // Before you draw you have to set the context (2D / 3D / etc)
+    const context = canvas.getContext("2d");
+    
+    // Draw a line
+    context.lineWidth = 2;
+    context.moveTo(50, 50); // sets starting position
+    context.lineTo(100, 100); // sets end position
+    context.stroke(); // draws the line
+
+    // To help, let's use a function
+    const draw = (startX, startY, endX, endY) => {
+      context.moveTo(startX, startY);
+      context.lineTo(endX, endY);
+      context.stroke();
+    }
+
+    // Draw a rectangle
+    const drawRectangle = () => {
+      context.fillStyle = "yellow";
+      context.rect(0, 0, 100, 100);
+      context.fill();
+    }
+
+    // Draw a circle
+    const drawCircle = (centerX, centerY, radius, startAngle, endAngle) => {
+      context.beginPath();
+      context.arc(centerX, centerY, radius, startAngle, endAngle);
+      context.stroke();
+    }
+    drawCircle(100, 100, 10, 0, Math.PI * 0.5);
+
+    
+  </script>
+</body>
+
+</html>
