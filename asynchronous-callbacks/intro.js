@@ -44,3 +44,5 @@ const mix = (callback) => {
 };
 
 eatRamen();
+
+/* This becomes callback hell and can quickly become quite messy */
