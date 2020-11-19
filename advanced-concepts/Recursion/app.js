@@ -41,7 +41,7 @@ function sumListR(arr) {
   return arr[0] + sumListR(arr.slice(1));
 }
 
-console.log(sumListR([1,2,3)); // 6
+console.log(sumListR([1,2,3])); // 6
 
 /* Let's trace it:
     1 + sumListR([2,3]) = 5 === 6
@@ -49,4 +49,17 @@ console.log(sumListR([1,2,3)); // 6
         3 + sumListR([]) = 0
           0 */
 
+/* Example 3 - sum all the digits in a number.  */
+/* --- WITH RECURSION --- */
+function addDigits(num) {
+  if (num < 10) return num; // base case
+  return num % 10 + addDigits(Math.floor(num / 10)); // 342 % 10 --> 2 and 342 / 10 --> .floor(34) 
+}
+
+console.log(addDigits(334)); // 10
+
+/* Let's trace it:
+    4 (num%10) + addDigits(33) = 6 === 10
+      3 (num%10) + addDigits(3) = 3
+        3 */
 
